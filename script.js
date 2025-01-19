@@ -2,10 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile menu toggle
     const menuBtn = document.querySelector('.menu-btn');
     const navLinks = document.querySelector('.nav-links');
-    const navLinksItems = document.querySelectorAll('.nav-links li a');
 
-    menuBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
+    menuBtn.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         // Change menu icon
         const icon = menuBtn.querySelector('i');
@@ -27,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Close menu when clicking a link
-    navLinksItems.forEach(link => {
+    document.querySelectorAll('.nav-links li a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
             menuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
