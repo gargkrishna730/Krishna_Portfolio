@@ -1050,4 +1050,187 @@ footer .social-links a:hover {
     transform: scaleX(0);
     transition: transform 0.2s ease;
     z-index: 1000;
+}
+
+/* Enhanced Card Effects */
+.skills li, .cert-item, .timeline-item {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+/* Glowing effect on hover */
+.skills li:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
+    background: linear-gradient(135deg, #ffffff 0%, #e6f3ff 100%);
+}
+
+.skills li:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #007bff, #00ff88, #007bff);
+    background-size: 200% 200%;
+    animation: glow 2s linear infinite;
+    z-index: -1;
+    margin: -2px;
+}
+
+/* Enhanced Certification Cards */
+.cert-item {
+    border: 1px solid rgba(0, 123, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.cert-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 123, 255, 0.2);
+    border-color: rgba(0, 123, 255, 0.3);
+}
+
+.cert-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transform: translateX(-100%);
+    transition: 0.6s;
+}
+
+.cert-item:hover::after {
+    transform: translateX(100%);
+}
+
+.cert-item i {
+    transition: transform 0.5s ease;
+}
+
+.cert-item:hover i {
+    transform: rotateY(360deg);
+}
+
+/* Timeline Item Enhancement */
+.timeline-item {
+    border-left: 4px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(to bottom, #007bff, #00ff88) border-box;
+}
+
+.timeline-item:hover {
+    transform: translateX(15px);
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.15);
+}
+
+/* New Animation Keyframes */
+@keyframes glow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+    }
+}
+
+/* Skill Tags Enhancement */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.skills li {
+    padding: 12px 20px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* 3D Card Effect */
+.cert-container {
+    perspective: 1000px;
+}
+
+.cert-item {
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+}
+
+.cert-item:hover {
+    transform: rotateY(10deg) rotateX(5deg);
+}
+
+/* Add these to your existing mobile media queries */
+@media screen and (max-width: 768px) {
+    .skills li:hover {
+        transform: translateY(-5px);
+    }
+    
+    .cert-item:hover {
+        transform: translateY(-5px);
+    }
+    
+    .timeline-item:hover {
+        transform: translateX(10px);
+    }
+}
+
+/* Interactive Background Effect for Skills Section */
+.skills {
+    position: relative;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.skills::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0,123,255,0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 } 
