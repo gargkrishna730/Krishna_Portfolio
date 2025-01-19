@@ -595,4 +595,58 @@ footer .social-links i {
         transform: translateY(-100vh) rotate(360deg);
         opacity: 0;
     }
+}
+
+/* Text alignment classes */
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+    .about-text p {
+        padding: 0 20px;
+        margin-bottom: 20px;
+    }
+
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 0 15px;
+    }
+
+    .skills-list li {
+        text-align: center;
+        margin: 5px;
+        padding: 8px 15px;
+        background: #f5f5f5;
+        border-radius: 20px;
+    }
+
+    .experience-list {
+        padding: 0 25px;
+        text-align: left;
+    }
+
+    .experience-list li {
+        margin-bottom: 10px;
+    }
+
+    .timeline-content {
+        padding: 15px;
+    }
+
+    .cert-container {
+        padding: 0 15px;
+    }
+
+    .contact-content {
+        padding: 0 20px;
+    }
 } 
