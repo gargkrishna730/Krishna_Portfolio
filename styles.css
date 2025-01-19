@@ -283,6 +283,7 @@ section {
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    text-decoration: none;
 }
 
 .cert-item i {
@@ -292,15 +293,18 @@ section {
 }
 
 .cert-item h3 {
-    font-size: 1.2rem;
-    line-height: 1.4;
-    margin-bottom: 0.5rem;
     color: var(--text-primary);
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 0;
+    text-decoration: none;
 }
 
 .cert-item p {
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    text-align: center;
+    margin: 0;
+    text-decoration: none;
 }
 
 /* Footer */
@@ -1845,4 +1849,36 @@ nav {
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    text-decoration: none;
+}
+
+.cert-item h3 {
+    color: var(--text-primary);
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 0;
+    text-decoration: none;
+}
+
+.cert-item p {
+    color: var(--text-secondary);
+    text-align: center;
+    margin: 0;
+    text-decoration: none;
+}
+
+/* Dark theme specific */
+[data-theme="dark"] .cert-item {
+    text-decoration: none;
+}
+
+[data-theme="dark"] .cert-item h3 {
+    text-decoration: none;
+}
+
+/* Hover state */
+.cert-item:hover {
+    text-decoration: none;
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
 } 
