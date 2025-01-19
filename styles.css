@@ -1486,7 +1486,6 @@ nav {
     .nav-links li {
         width: 100%;
         text-align: center;
-        padding: 0.8rem 0;
     }
 
     /* Home Section Mobile Adjustments */
@@ -1798,4 +1797,52 @@ nav {
             backdrop-filter: blur(10px);
         }
     }
+}
+
+/* Update certificate logo styles */
+.cert-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+    padding: 0.5rem;
+}
+
+.cert-item:hover .cert-logo {
+    transform: scale(1.1);
+}
+
+/* Dark theme adjustments for logos */
+[data-theme="dark"] .cert-logo {
+    filter: brightness(1) contrast(1.1);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .cert-logo {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+    .cert-logo {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* Certificate item container adjustments */
+.cert-item {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 } 
