@@ -1282,13 +1282,15 @@ footer .social-links a:hover {
     --gradient-2: linear-gradient(-45deg, #333333, #1a1a1a, #0056b3, #007bff);
     --card-bg: #ffffff;
     --card-shadow: rgba(0, 0, 0, 0.1);
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    --mobile-menu-bg: rgba(255, 255, 255, 0.98);
     --transition: all 0.3s ease;
 }
 
 /* Dark Theme Variables */
 [data-theme="dark"] {
-    --bg-primary: #1a1a1a;
-    --bg-secondary: #2d2d2d;
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
     --text-primary: #ffffff;
     --text-secondary: #cccccc;
     --accent-color: #00a6ff;
@@ -1296,6 +1298,8 @@ footer .social-links a:hover {
     --gradient-2: linear-gradient(-45deg, #1a1a1a, #2d2d2d, #004080, #0056b3);
     --card-bg: #2d2d2d;
     --card-shadow: rgba(0, 0, 0, 0.3);
+    --nav-bg: rgba(30, 30, 30, 0.95);
+    --mobile-menu-bg: rgba(30, 30, 30, 0.98);
     --home-text: #ffffff;
     --home-subtext: #cccccc;
     --timeline-border: #00a6ff;
@@ -1574,4 +1578,127 @@ nav {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     padding: 1rem;
+}
+
+/* Mobile Navigation Dark Theme Fixes */
+@media screen and (max-width: 768px) {
+    nav {
+        background: var(--nav-bg);
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-links {
+        background: var(--mobile-menu-bg);
+    }
+
+    .nav-links li a {
+        color: var(--text-primary);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Home Section Mobile Dark Theme */
+    .home-content {
+        background: rgba(45, 45, 45, 0.8);
+        backdrop-filter: blur(10px);
+    }
+
+    .home-content h1,
+    .home-content h2,
+    .home-content p {
+        color: var(--text-primary);
+    }
+
+    /* Skills Mobile Dark Theme */
+    .skills li {
+        background: var(--card-bg);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Timeline Mobile Dark Theme */
+    .timeline-item {
+        background: var(--card-bg);
+        border-left: 4px solid var(--accent-color);
+    }
+
+    /* Certifications Mobile Dark Theme */
+    .cert-item {
+        background: var(--card-bg);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .cert-item h3 {
+        color: var(--text-primary);
+    }
+
+    .cert-item p {
+        color: var(--text-secondary);
+    }
+
+    /* Contact Form Mobile Dark Theme */
+    .contact-content {
+        background: var(--gradient-2);
+    }
+
+    .contact-info h2,
+    .contact-info p {
+        color: var(--text-primary);
+    }
+
+    .contact-item a {
+        color: var(--text-primary);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--text-primary);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Section Titles Dark Theme */
+    .section-title {
+        color: var(--text-primary);
+    }
+}
+
+/* Extra Small Devices Dark Theme */
+@media screen and (max-width: 480px) {
+    [data-theme="dark"] .home-content {
+        background: rgba(45, 45, 45, 0.9);
+    }
+
+    [data-theme="dark"] .cert-item {
+        background: var(--card-bg);
+    }
+
+    [data-theme="dark"] .social-links a {
+        color: var(--text-primary);
+    }
+}
+
+/* Improve visibility of social links in dark theme */
+[data-theme="dark"] .social-links a {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Footer Dark Theme Mobile */
+[data-theme="dark"] footer {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] footer .social-links a {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] footer .copyright {
+    color: var(--text-secondary);
 } 
