@@ -76,23 +76,25 @@ nav {
     text-align: center;
     padding: 2rem;
     background: var(--gradient-1);
-    background-size: 400% 400%;
+    background-size: cover;
     animation: gradientBG 15s ease infinite;
     position: relative;
 }
 
 .home-content {
+    background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(5px);
     padding: 2rem;
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     border: 1px solid rgba(255, 255, 255, 0.18);
+    color: white;
 }
 
 .home-content h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: white;
 }
 
 .name {
@@ -102,7 +104,7 @@ nav {
 .home-content h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: #666;
+    color: white;
 }
 
 .social-links {
@@ -760,12 +762,19 @@ footer {
         padding: 1rem;
     }
 
-    .home-content h1 {
-        font-size: 2rem;
+    .home-content {
+        width: 90%;
+        padding: 2rem 1rem;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: white;
     }
 
-    .home-content h2 {
-        font-size: 1.5rem;
+    .home-content h1,
+    .home-content h2,
+    .home-content p {
+        color: white;
     }
 
     .cert-container {
@@ -1165,18 +1174,26 @@ footer {
     }
 
     .home-content {
-        width: 95%;
+        width: 90%;
         padding: 2rem 1rem;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: white;
+    }
+
+    .home-content h1,
+    .home-content h2,
+    .home-content p {
+        color: white;
     }
 
     .home-content h1 {
-        font-size: 1.8rem;
-        margin-bottom: 0.8rem;
+        font-size: 2rem;
     }
 
     .home-content h2 {
-        font-size: 1.3rem;
-        margin-bottom: 0.8rem;
+        font-size: 1.4rem;
     }
 
     .home-content p {
@@ -1626,6 +1643,12 @@ nav {
         margin: 0 auto;
     }
 
+    .home-content h1,
+    .home-content h2,
+    .home-content p {
+        color: white;
+    }
+
     .home-content h1 {
         font-size: 2rem;
     }
@@ -1739,7 +1762,7 @@ nav {
     .home-content h1,
     .home-content h2,
     .home-content p {
-        color: var(--text-primary);
+        color: white;
     }
 
     /* Skills Mobile Dark Theme */
