@@ -446,18 +446,24 @@ footer .social-links a:hover {
 .contact-item i {
     font-size: 1.5rem;
     color: white;
-    width: 30px;
+    min-width: 30px;
+    text-align: center;
 }
 
-.contact-item p, 
 .contact-item a {
     font-size: 1.1rem;
     color: white;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .contact-item a:hover {
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: underline;
+}
+
+.contact-item p {
+    display: none;
 }
 
 /* Contact Form Styles */
@@ -539,7 +545,17 @@ footer .social-links a:hover {
     }
 
     .contact-item {
-        justify-content: center;
+        justify-content: flex-start;
+        margin-bottom: 1rem;
+    }
+
+    .contact-item i {
+        font-size: 1.3rem;
+        min-width: 25px;
+    }
+
+    .contact-item a {
+        font-size: 1rem;
     }
 
     .contact-form {
