@@ -109,8 +109,37 @@ nav {
     margin-top: 2rem;
 }
 
+/* Home section social links - No padding */
+#home .social-links a {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    transition: color 0.3s;
+    padding: 0;
+    background: transparent !important;
+    border-radius: 0;
+}
+
+#home .social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+/* Dark theme specific for home social links */
+[data-theme="dark"] #home .social-links a {
+    color: var(--text-primary);
+    padding: 0;
+    background: transparent !important;
+}
+
+[data-theme="dark"] #home .social-links a:hover {
+    color: var(--accent-color);
+    background: transparent !important;
+}
+
+/* Remove any general social links styles that might affect the footer */
 .social-links a {
-    color: #333;
+    color: var(--text-primary);
     font-size: 1.5rem;
     margin: 0 1rem;
     transition: color 0.3s;
@@ -1979,4 +2008,27 @@ nav {
     text-decoration: none;
     transform: translateY(-5px);
     transition: transform 0.3s ease;
+}
+
+/* Home section social links - No padding for both themes */
+#home .social-links a {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    transition: color 0.3s;
+    padding: 0;
+    background: transparent !important;
+    border-radius: 0;
+}
+
+/* Dark theme specific for home social links */
+[data-theme="dark"] #home .social-links a {
+    color: var(--text-primary);
+    padding: 0;
+    background: transparent !important;
+}
+
+[data-theme="dark"] #home .social-links a:hover {
+    color: var(--accent-color);
+    background: transparent !important;
 } 
