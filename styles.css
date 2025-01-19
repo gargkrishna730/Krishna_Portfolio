@@ -67,14 +67,14 @@ nav {
     color: var(--text-primary);
 }
 
-/* Home Section */
+/* Home Section - Base Styles */
 #home {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 2rem;
+    padding: 6rem 2rem 2rem;
     background: var(--gradient-1);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
@@ -82,8 +82,11 @@ nav {
 }
 
 .home-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
     backdrop-filter: blur(5px);
-    padding: 2rem;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -93,31 +96,30 @@ nav {
 .home-content h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-}
-
-.name {
-    color: #007bff;
+    color: var(--text-primary);
 }
 
 .home-content h2 {
     font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #666;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
 }
 
-.social-links {
+/* Social Links Styles */
+#home .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
     margin-top: 2rem;
 }
 
-/* Home section social links - No padding */
 #home .social-links a {
     color: var(--text-primary);
-    font-size: 1.5rem;
-    margin: 0 1rem;
-    transition: color 0.3s;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
     padding: 0;
     background: transparent !important;
-    border-radius: 0;
+    text-decoration: none;
 }
 
 #home .social-links a:hover {
@@ -125,28 +127,26 @@ nav {
     transform: translateY(-3px);
 }
 
-/* Dark theme specific for home social links */
+/* Dark Theme Specific */
 [data-theme="dark"] #home .social-links a {
     color: var(--text-primary);
-    padding: 0;
     background: transparent !important;
 }
 
 [data-theme="dark"] #home .social-links a:hover {
     color: var(--accent-color);
-    background: transparent !important;
 }
 
-/* Remove any general social links styles that might affect the footer */
-.social-links a {
-    color: var(--text-primary);
-    font-size: 1.5rem;
-    margin: 0 1rem;
-    transition: color 0.3s;
-}
+/* Landscape Mode */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+    #home {
+        height: auto;
+        padding: 5rem 1rem 2rem;
+    }
 
-.social-links a:hover {
-    color: #007bff;
+    .home-content {
+        padding: 1.5rem;
+    }
 }
 
 /* Section Styles */
@@ -1160,13 +1160,16 @@ footer {
 
     /* Home Section Mobile */
     #home {
-        height: 100vh;
-        padding: 1rem;
+        min-height: 100vh;
+        padding: 6rem 1rem 2rem;
     }
 
     .home-content {
-        width: 95%;
+        width: 100%;
+        max-width: 90%;
         padding: 2rem 1rem;
+        margin: 0 auto;
+        backdrop-filter: blur(5px);
     }
 
     .home-content h1 {
@@ -1176,7 +1179,7 @@ footer {
 
     .home-content h2 {
         font-size: 1.3rem;
-        margin-bottom: 0.8rem;
+        margin-bottom: 1rem;
     }
 
     .home-content p {
@@ -1185,12 +1188,25 @@ footer {
     }
 
     .social-links {
-        margin-top: 1.5rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 2rem;
     }
 
-    .social-links a {
-        font-size: 1.3rem;
-        margin: 0 0.8rem;
+    #home .social-links a {
+        font-size: 1.4rem;
+        margin: 0;
+        padding: 0;
+        color: var(--text-primary);
+        background: transparent !important;
+    }
+
+    [data-theme="dark"] #home .social-links a {
+        color: var(--text-primary);
+        background: transparent !important;
+        padding: 0;
     }
 
     /* About Section Mobile */
@@ -1249,8 +1265,8 @@ footer {
     /* Certifications Mobile */
     .cert-container {
         grid-template-columns: 1fr;
-        gap: 1rem;
-        padding: 0.5rem;
+        gap: 1.5rem;
+        padding: 0 0.5rem;
     }
 
     .cert-item {
@@ -1369,7 +1385,7 @@ footer {
 /* Extra Small Devices */
 @media screen and (max-width: 480px) {
     .home-content h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .home-content h2 {
@@ -1398,7 +1414,7 @@ footer {
     #home {
         height: auto;
         min-height: 100vh;
-        padding: 6rem 1rem 2rem;
+        padding: 5rem 1rem 2rem;
     }
 
     .home-content {
@@ -1684,7 +1700,7 @@ nav {
 /* Small Mobile Devices */
 @media screen and (max-width: 480px) {
     .home-content h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .section-title {
@@ -2031,4 +2047,130 @@ nav {
 [data-theme="dark"] #home .social-links a:hover {
     color: var(--accent-color);
     background: transparent !important;
+}
+
+/* Mobile-first responsive design */
+@media screen and (max-width: 768px) {
+    /* Home Section Mobile */
+    #home {
+        min-height: 100vh;
+        padding: 6rem 1rem 2rem;
+    }
+
+    .home-content {
+        width: 100%;
+        max-width: 90%;
+        padding: 2rem 1rem;
+        margin: 0 auto;
+        backdrop-filter: blur(5px);
+    }
+
+    .home-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .home-content h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Social Links Mobile */
+    .social-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    #home .social-links a {
+        font-size: 1.4rem;
+        margin: 0;
+        padding: 0;
+        color: var(--text-primary);
+        background: transparent !important;
+    }
+
+    [data-theme="dark"] #home .social-links a {
+        color: var(--text-primary);
+        background: transparent !important;
+        padding: 0;
+    }
+
+    /* Navigation Mobile */
+    .nav-content {
+        padding: 0.8rem 1rem;
+    }
+
+    .logo a {
+        font-size: 1.3rem;
+    }
+
+    /* Sections Mobile */
+    section {
+        padding: 4rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Skills Mobile */
+    .skills ul {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1rem;
+    }
+
+    /* Timeline Mobile */
+    .timeline-item {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Certifications Mobile */
+    .cert-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    /* Contact Mobile */
+    .contact-content {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+}
+
+/* Extra Small Devices */
+@media screen and (max-width: 480px) {
+    .home-content h1 {
+        font-size: 1.6rem;
+    }
+
+    .home-content h2 {
+        font-size: 1.2rem;
+    }
+
+    #home .social-links {
+        gap: 1.2rem;
+    }
+
+    #home .social-links a {
+        font-size: 1.3rem;
+    }
+}
+
+/* Landscape Mode */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+    #home {
+        height: auto;
+        min-height: 100vh;
+        padding: 5rem 1rem 2rem;
+    }
+
+    .home-content {
+        padding: 1.5rem;
+    }
 } 
