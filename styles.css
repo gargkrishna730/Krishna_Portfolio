@@ -612,7 +612,7 @@ footer {
     border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.1);
-    color: white;
+    color: #ffffff;
     font-size: 1rem;
     transition: all 0.3s ease;
 }
@@ -2062,4 +2062,28 @@ nav {
 [data-theme="dark"] #home .social-links a:hover {
     color: var(--accent-color);
     background: transparent !important;
+}
+
+/* Contact Form Mobile Adjustments */
+@media screen and (max-width: 768px) {
+    .contact-item {
+        color: #ffffff !important;
+    }
+    
+    .contact-item a,
+    .contact-item i,
+    .contact-info h2,
+    .contact-info p {
+        color: #ffffff !important;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        color: #ffffff !important;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
 } 
