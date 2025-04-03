@@ -61,40 +61,78 @@
             <div class="about-text">
                 <p class="text-justify">Dedicated DevOps Engineer leveraging 2 years of expertise in cloud and on-premise infrastructure automation. Specializing in building robust CI/CD pipelines, implementing infrastructure as code, and orchestrating containerized environments. Known for driving efficiency through innovative automation solutions while fostering strong cross-functional collaboration to enhance development practices and system performance.</p>
                 <div class="skills">
-                    <h3 class="text-center">Skills:</h3>
-                    <ul class="skills-list">
-                        <li>Bash</li>
-                        <li>Python</li>
-                        <li>Shell Scripting</li>
-                        <li>YAML</li>
-                        <li>Jenkins</li>
-                        <li>GitHub Actions</li>
-                        <li>GitLab CI</li>
-                        <li>Docker</li>
-                        <li>Kubernetes</li>
-                        <li>AWS</li>
-                        <li>Azure</li>
-                        <li>GCP</li>
-                        <li>Oracle Cloud</li>
-                        <li>IBM Cloud</li>
-                        <li>Terraform</li>
-                        <li>Ansible</li>
-                        <li>Git</li>
-                        <li>TFVC</li>
-                        <li>Prometheus</li>
-                        <li>Grafana</li>
-                        <li>ELK Stack</li>
-                        <li>Linux</li>
-                        <li>Nginx</li>
-                        <li>Apache</li>
-                        <li>IIS</li>
-                        <li>Gunicorn</li>
-                        <li>SonarQube</li>
-                        <li>Azure DevOps</li>
-                        <li>FinOps</li>
-                        <li>Travis CI</li>
-
-                    </ul>
+                    <div class="skills-categories">
+                        <div class="skill-category">
+                            <h4><i class="fas fa-terminal"></i> Languages & Scripting</h4>
+                            <ul class="skills-list">
+                                <li>Bash</li>
+                                <li>Python</li>
+                                <li>Shell Scripting</li>
+                                <li>YAML</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4><i class="fas fa-cloud"></i> Cloud Platforms</h4>
+                            <ul class="skills-list">
+                                <li>AWS</li>
+                                <li>Azure</li>
+                                <li>GCP</li>
+                                <li>Oracle Cloud</li>
+                                <li>IBM Cloud</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4><i class="fas fa-cogs"></i> DevOps & CI/CD</h4>
+                            <ul class="skills-list">
+                                <li>Jenkins</li>
+                                <li>GitHub Actions</li>
+                                <li>GitLab CI/CD</li>
+                                <li>ArgoCD</li>
+                                <li>Docker</li>
+                                <li>Kubernetes</li>
+                                <li>Ansible</li>
+                                <li>Terraform</li>
+                                <li>Helm</li>
+                                <li>Packer</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4><i class="fas fa-shield-alt"></i> Security & IAM</h4>
+                            <ul class="skills-list">
+                                <li>OpenAM</li>
+                                <li>Microsoft Entra ID</li>
+                                <li>OAuth</li>
+                                <li>SAML</li>
+                                <li>Keycloak</li>
+                                <li>HashiCorp Vault</li>
+                                <li>AWS IAM</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4><i class="fas fa-chart-line"></i> Monitoring & Logging</h4>
+                            <ul class="skills-list">
+                                <li>Prometheus</li>
+                                <li>Grafana</li>
+                                <li>ELK Stack</li>
+                                <li>New Relic</li>
+                                <li>Datadog</li>
+                                <li>Splunk</li>
+                                <li>Nagios</li>
+                                <li>AWS CloudWatch</li>
+                                <li>Azure Monitor</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4><i class="fas fa-database"></i> Databases</h4>
+                            <ul class="skills-list">
+                                <li>MySQL</li>
+                                <li>PostgreSQL</li>
+                                <li>Microsoft SQL Server</li>
+                                <li>Azure SQL</li>
+                                <li>MongoDB</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -266,7 +304,7 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" action="https://formsubmit.co/gargkrishna730@gmail.com" method="POST">
+                <form class="contact-form" action="thankyou.html" onsubmit="return handleSubmit(event)">
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Your Name" required>
                     </div>

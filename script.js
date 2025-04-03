@@ -113,10 +113,31 @@ document.addEventListener('DOMContentLoaded', () => {
         item.classList.add('animate', 'fade-in-up');
     });
 
+    // Skills Animation
+    const observeSkills = () => {
+        const skillCategories = document.querySelectorAll('.skill-category');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px'
+        });
+
+        skillCategories.forEach(category => {
+            observer.observe(category);
+        });
+    };
+
     // Initialize animations
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll(); // Run once on load
     typeEffect(); // Start typing effect
+    observeSkills();
 
     // Particle background effect for home section
     const homeSection = document.querySelector('#home');
@@ -148,14 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle form submission on mobile
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            // Prevent double submission
-            const submitBtn = contactForm.querySelector('.submit-btn');
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Sending...';
-            }
-        });
+        contactForm.addEventListener('submit', handleSubmit);
     }
 
     // Smooth reveal animations on scroll
@@ -233,4 +247,40 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', newTheme);
         updateThemeIcon(newTheme);
     });
-}); 
+});
+
+function handleSubmit(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const formData = new FormData(form);
+    const submitBtn = form.querySelector('.submit-btn');
+    
+    // Disable the submit button and show loading state
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    // Send the form data to your email (using formsubmit.co service)
+    fetch('https://formsubmit.co/ajax/gargkrishna730@gmail.com', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(Object.fromEntries(formData))
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Redirect to thank you page
+        window.location.href = 'thankyou.html';
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        // Re-enable the submit button if there's an error
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+        alert('There was an error sending your message. Please try again.');
+    });
+
+    return false;
+} 
