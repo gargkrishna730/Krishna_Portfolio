@@ -247,6 +247,12 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', newTheme);
         updateThemeIcon(newTheme);
     });
+
+    // Particle Background Effect
+    initParticles();
+    initTypingEffect();
+    initScrollProgress();
+    initSkillProgress();
 });
 
 function handleSubmit(event) {
@@ -283,4 +289,78 @@ function handleSubmit(event) {
     });
 
     return false;
+}
+
+// Particle Background Effect
+function initParticles() {
+    const particlesContainer = document.querySelector('.particles-container');
+    const particleCount = 50;
+
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        particle.style.animationDelay = `${Math.random() * 2}s`;
+        particlesContainer.appendChild(particle);
+    }
+}
+
+// Typing Effect for Home Section
+function initTypingEffect() {
+    const texts = ["Cloud and DevOps Engineer", "Infrastructure Automation Expert", "CI/CD Specialist"];
+    const typingElement = document.querySelector('.home-content h2');
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+        const currentText = texts[textIndex];
+        if (isDeleting) {
+            typingElement.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typingElement.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        if (!isDeleting && charIndex === currentText.length) {
+            isDeleting = true;
+            setTimeout(type, 2000);
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            textIndex = (textIndex + 1) % texts.length;
+            setTimeout(type, 500);
+        } else {
+            setTimeout(type, isDeleting ? 50 : 100);
+        }
+    }
+
+    type();
+}
+
+// Scroll Progress Indicator
+function initScrollProgress() {
+    const progressBar = document.querySelector('.scroll-progress');
+    
+    window.addEventListener('scroll', () => {
+        const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = (window.pageYOffset / totalScroll) * 100;
+        progressBar.style.transform = `scaleX(${progress / 100})`;
+    });
+}
+
+// Skill Progress Animation
+function initSkillProgress() {
+    const skillItems = document.querySelectorAll('.skill-category');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    skillItems.forEach(item => observer.observe(item));
 } 
