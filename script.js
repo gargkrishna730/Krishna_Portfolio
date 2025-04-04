@@ -1,4 +1,31 @@
+// Register Service Worker
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+                console.log('ServiceWorker registration successful');
+            })
+            .catch(err => {
+                console.log('ServiceWorker registration failed: ', err);
+            });
+    });
+}
+
+// Add offline/online status handling
+window.addEventListener('online', () => {
+    document.body.classList.remove('offline');
+});
+
+window.addEventListener('offline', () => {
+    document.body.classList.add('offline');
+});
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Check initial online status
+    if (!navigator.onLine) {
+        document.body.classList.add('offline');
+    }
+
     // Mobile menu toggle
     const menuBtn = document.querySelector('.menu-btn');
     const navLinks = document.querySelector('.nav-links');
