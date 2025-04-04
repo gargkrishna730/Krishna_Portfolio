@@ -238,8 +238,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeSwitch = document.querySelector('.theme-switch');
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
     
-    // Always set dark theme as default
-    const currentTheme = localStorage.getItem('theme') || 'dark';
+    // Set light theme as default
+    const currentTheme = localStorage.getItem('theme') || 'light';
     
     // Set initial theme
     document.documentElement.setAttribute('data-theme', currentTheme);
